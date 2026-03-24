@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AcadexFilter" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee33ae5e-5233-46ba-a267-aaee9f911edc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC_StuConnection_Adapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="REPORT_TYPE" class="java.lang.String"/>
+	<parameter name="STATUS_FILTER" class="java.lang.String"/>
+	<parameter name="GENDER_FILTER" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT  * FROM `acadex`.`student`;]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fname"/>
+		<property name="com.jaspersoft.studio.field.label" value="fname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="lname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lname"/>
+		<property name="com.jaspersoft.studio.field.label" value="lname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="dob" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dob"/>
+		<property name="com.jaspersoft.studio.field.label" value="dob"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="mobile" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mobile"/>
+		<property name="com.jaspersoft.studio.field.label" value="mobile"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="nic" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nic"/>
+		<property name="com.jaspersoft.studio.field.label" value="nic"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="gender_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="gender_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="gender_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="status_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="status_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="status_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="170" y="60" width="100" height="29" forecolor="#FFFFFF" uuid="5731b2e2-5492-41b8-b6a1-b88b561234cf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Report Type : ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-20" y="-21" width="841" height="119" backcolor="#24425E" uuid="565ae816-7908-4a16-abd8-c651b5cb2f0c"/>
+			</rectangle>
+			<image>
+				<reportElement x="-10" y="-12" width="100" height="101" uuid="df52a397-c350-435a-ae8f-a75bc040f785"/>
+				<imageExpression><![CDATA["lk/tchk/img/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="50" width="90" height="26" forecolor="#FFFFFF" uuid="acb6033c-36b7-4bb1-962f-b65e8fa96dd3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Type : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="690" height="44" forecolor="#FFFFFF" uuid="ceff4c0f-5a14-4f61-917c-607a67b3bdd2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acadex Student Management System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="50" width="150" height="26" forecolor="#FFFFFF" uuid="94122e40-373e-4989-ba97-9395d066c8bf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="78" splitType="Stretch">
+			<rectangle radius="8">
+				<reportElement mode="Transparent" x="10" y="0" width="229" height="69" backcolor="#FFFFFF" uuid="2aeb99f4-b17a-4183-971e-96dfaf474594"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="11" width="70" height="14" uuid="76cd9a3d-de7a-4d06-ba45-ffe9402cda9a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Report Type  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="29" width="70" height="14" uuid="74274379-dcb6-42e6-8b0f-70511aed6347"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Gender Type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="47" width="70" height="14" uuid="7d1760e6-e98e-495f-b92b-d37158c4605a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Status Type   :]]></text>
+			</staticText>
+			<rectangle radius="8">
+				<reportElement x="550" y="2" width="231" height="69" uuid="4ebfaa77-ffc0-4967-af28-2e3a62257739"/>
+			</rectangle>
+			<textField>
+				<reportElement x="634" y="35" width="128" height="20" forecolor="#171515" uuid="a0749cb9-88f2-4038-9366-da86c80d7d66"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="634" y="10" width="130" height="20" forecolor="#030303" uuid="6ae2a86f-c5b1-4b6c-a32c-2f02fad8c86f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="554" y="10" width="80" height="20" uuid="588280ed-f865-4fa7-837f-8494202493ab"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Genarated Date : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="554" y="35" width="80" height="20" uuid="58792b49-da36-494b-a05b-144fe95a7b42"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Page Number    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="11" width="100" height="14" uuid="8a29f658-efbb-4d39-a424-17d164caf0bd"/>
+				<text><![CDATA[Student Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="29" width="100" height="14" uuid="a6520244-9078-420e-8d66-1d19e391f576"/>
+				<text><![CDATA[Male & Female]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="47" width="100" height="14" uuid="e06d8a1f-8e89-4800-bcfc-cc4ea92093e5"/>
+				<text><![CDATA[Active & Inactive]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="49" height="30" backcolor="#D6D4D4" uuid="21bb43d4-8203-4e92-8fcf-ade594249deb"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="50" y="1" width="129" height="30" backcolor="#D6D4D4" uuid="5a12403d-e16e-4374-8193-2f9275ee43ee"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="1" width="130" height="30" backcolor="#D6D4D4" uuid="0a80614d-9f37-43a5-a5e6-21254dcef214"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="311" y="1" width="190" height="30" backcolor="#D6D4D4" uuid="88f7eb94-886c-44dd-8434-0fc0b7a548dd"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Email Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="722" y="1" width="80" height="30" backcolor="#D6D4D4" uuid="b6a24e72-8bc2-40d6-98b1-30184ed6f2a0"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Mobile Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="502" y="1" width="109" height="30" backcolor="#D6D4D4" uuid="87523689-24d8-42e5-a162-7bd506e1d4c7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[NIC Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="612" y="1" width="109" height="30" backcolor="#D6D4D4" uuid="4f401c4e-3999-4217-890d-d0226b24853a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="6" width="49" height="24" uuid="e7481221-90ea-43c9-be74-f224d5b10df1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="71e72edf-114e-4d78-9a3e-915a3009bfb4"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="6" width="129" height="24" uuid="bafcd100-9421-45cf-9f6e-add2e32cfd7a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b4c0b77f-43ef-42e7-b9a7-5dbc0150ebbb"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="6" width="130" height="24" uuid="c169afd9-5997-4a8f-a15c-df3b832adeae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="785ae686-af43-4266-9fca-30cc28a0a0b9"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="6" width="190" height="24" uuid="08d8b4bd-56bf-4fff-8689-82e75ae1f293">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="329715b4-9218-4dd8-808c-8ad096dc4f27"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="6" width="109" height="24" uuid="d55d0568-d10a-4b12-aed1-f40a48935b79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5d0918d7-a7e5-49b3-93ac-04b3680e6b7e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="612" y="6" width="109" height="24" uuid="de27b3f7-bedf-480d-ac47-bc9c75baf73a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3ad6f574-5f40-4a9c-b76b-6a9c891f0425"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="6" width="80" height="24" uuid="b67cf47f-d336-4771-a7d4-ebe232a2c53b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5364b2fd-f121-4df2-9c73-06fd58025ff6"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mobile}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="48">
+			<staticText>
+				<reportElement x="2" y="9" width="800" height="30" uuid="9f244f83-406c-4680-b51d-3a5d503447ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[© 2025 Acadex. All right reserved.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
